@@ -1,6 +1,114 @@
-body
-  padding: 50px
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif
+$maxWidth: 1170px
+$baseFontSize: 16px
+$baseFontFamily: 'Open Sans'
+$baseLineHeight: 1.3
+$baseTextColor: #141414
 
-a
-  color: #00B7FF
+body
+  font-size: $baseFontSize
+  font-family: $baseFontFamily
+  line-height: $baseLineHeight
+  color: $baseTextColor
+  background: #F5F5F5
+  padding-top: 35px
+
+  .container
+    max-width: $maxWidth !important
+    position: relative
+    margin: 0 auto
+
+  a,
+  input,
+  button
+    transition: all 0.2s ease-in-out
+    &:active,
+    &:focus
+      outline: none !important
+
+  .t-center
+    text-align: center
+
+  .t-right
+    text-align: right
+
+  .t-left
+    text-align: left
+
+
+  section
+    margin-bottom: 15px
+    background: #fff
+    -webkit-border-radius: 3px
+    -moz-border-radius: 3px
+    border-radius: 3px
+    min-height: 50px
+    box-shadow: 0 0 5px 0 #747474
+
+  .stat
+    background: $baseTextColor
+    padding: 5px 10px
+    .num
+      color: #fff
+      margin-top: 5px
+    .btn
+      -webkit-border-radius: 3px
+      -moz-border-radius: 3px
+      border-radius: 3px
+      background: #4cae4c
+      color: #fff
+      font-weight: 700
+      padding: 5px 10px
+      &:hover
+        background: #3c763d
+  .about
+    min-height: 100px
+    .logo
+      font-size: 60px
+      margin: 0 30px
+  .nav
+    background: #4cae4c
+    padding: 0 20px
+    ul
+      list-style: none
+      padding-left: 0
+      margin-bottom: 0
+      li
+        display: inline-block
+        .open > a:hover, 
+        .open > a:focus
+          background: #3c763d
+        a
+          text-decoration: none
+          padding: 10px 20px
+          display: block
+          margin: 0
+          color: #fff
+          text-transform: uppercase
+          &:hover,
+          &:focus
+            background: #3c763d
+        .active
+          background: #3c763d
+        ul.dropdown-menu
+          padding: 0
+          li
+            width: 100%
+          a
+            background: #fff
+            color: $baseTextColor
+            width: 100%
+            &:hover
+              background: #3c763d
+              color: #fff
+  .hot-tours
+    background: rgba(203, 58, 0, 0.7)
+    min-height: 150px
+
+    
+  .footer
+    background: $baseTextColor
+    color: #fff
+
+@media (min-width: 0px) and (max-width: $maxWidth)
+  section, header, footer, .container
+    width: $maxWidth !important

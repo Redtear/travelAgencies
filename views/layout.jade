@@ -2,6 +2,82 @@ doctype html
 html
   head
     title= title
+
+    meta(charset="utf-8")
+
+    link(rel='stylesheet', href='/bootstrap/css/bootstrap.css')
+    link(rel='stylesheet', href='/bootstrap/css/bootstrap-theme.css')
     link(rel='stylesheet', href='/stylesheets/style.css')
+    link(rel='stylesheet', href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic&subset=latin,cyrillic')
+
+    script(src='/javascripts/jquery-1.11.1.min.js')
+    script(src='/javascripts/jquery.validate.min.js')
+    script(src='/bootstrap/js/bootstrap.js')
+    script(src='/javascripts/script.js')
+
   body
-    block content
+    .container
+      section.header
+        .stat
+          .row
+            .col-sm-6
+              .num number
+            .col-sm-6
+              .t-right
+                button.btn(type='button', data-trigger="focus",  title, data-placement="bottom", data-toggle="popover" data-content="form auth") Sign
+        .about
+          .row
+            .col-sm-4
+              .logo logo
+            .col-sm-8
+              .row
+                .col-sm-6
+                  .contacts contacts
+                .col-sm-6
+                  .contacts contacts
+        .nav
+          ul
+            li
+              .dropdown
+                a#dLabel(href='', data-toggle="dropdown" aria-haspopup="true" aria-expanded="false", data-target="#", role='button') Tours
+                ul.dropdown-menu(aria-labelledby="dLabel")
+                  li
+                    a(href='') tour 1
+                  li
+                    a(href='') tour 2
+                  li
+                    a(href='') tour 3
+            li
+              .dropdown
+                a#dLabel2(href='', data-toggle="dropdown" aria-haspopup="true" aria-expanded="false", data-target="#", role='button') Pages 1
+                ul.dropdown-menu(aria-labelledby="dLabel2")
+                  li
+                    a(href='') page 1
+                  li
+                    a(href='') page 2
+            li
+              .dropdown
+                a#dLabel3(href='', data-toggle="dropdown" aria-haspopup="true" aria-expanded="false", data-target="#", role='button') Pages 2
+                ul.dropdown-menu(aria-labelledby="dLabel3")
+                  li
+                    a(href='') page 1
+                  li
+                    a(href='') page 2
+                  li
+                    a(href='') page 3
+            li
+              .dropdown
+                a#dLabel4(href='', data-toggle="dropdown" aria-haspopup="true" aria-expanded="false", data-target="#", role='button') Countries
+                ul.dropdown-menu(aria-labelledby="dLabel4")
+                  li
+                    a(href='') Countrie 1
+                  li
+                    a(href='') Countrie 2
+                  li
+                    a(href='') Countrie 3
+      section.hot-tours
+        h2 hot tours
+      block content
+      section.footer
+        h2 footer
+

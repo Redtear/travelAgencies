@@ -1,8 +1,102 @@
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif; }
+  font-size: 16px;
+  font-family: "Open Sans", sans-serif;
+  line-height: 1.3;
+  color: #141414;
+  background: #F5F5F5;
+  padding-top: 35px; }
+  body .container {
+    max-width: 1170px !important;
+    position: relative;
+    margin: 0 auto; }
+  body a,
+  body input,
+  body button {
+    transition: all 0.2s ease-in-out; }
+    body a:active, body a:focus,
+    body input:active,
+    body input:focus,
+    body button:active,
+    body button:focus {
+      outline: none !important; }
+  body .t-center {
+    text-align: center; }
+  body .t-right {
+    text-align: right; }
+  body .t-left {
+    text-align: left; }
+  body section {
+    margin-bottom: 15px;
+    background: #fff;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    min-height: 50px;
+    box-shadow: 0 0 5px 0 #747474; }
+  body .stat {
+    background: #141414;
+    padding: 5px 10px; }
+    body .stat .num {
+      color: #fff;
+      margin-top: 5px; }
+    body .stat .btn {
+      -webkit-border-radius: 3px;
+      -moz-border-radius: 3px;
+      border-radius: 3px;
+      background: #4cae4c;
+      color: #fff;
+      font-weight: 700;
+      padding: 5px 10px; }
+      body .stat .btn:hover {
+        background: #3c763d; }
+  body .about {
+    min-height: 100px; }
+    body .about .logo {
+      font-size: 60px;
+      margin: 0 30px; }
+  body .nav {
+    background: #4cae4c;
+    padding: 0 20px; }
+    body .nav ul {
+      list-style: none;
+      padding-left: 0;
+      margin-bottom: 0; }
+      body .nav ul li {
+        display: inline-block; }
+        body .nav ul li .open > a:hover,
+        body .nav ul li .open > a:focus {
+          background: #3c763d; }
+        body .nav ul li a {
+          text-decoration: none;
+          padding: 10px 20px;
+          display: block;
+          margin: 0;
+          color: #fff;
+          text-transform: uppercase; }
+          body .nav ul li a:hover, body .nav ul li a:focus {
+            background: #3c763d; }
+        body .nav ul li .active {
+          background: #3c763d; }
+        body .nav ul li ul.dropdown-menu {
+          padding: 0; }
+          body .nav ul li ul.dropdown-menu li {
+            width: 100%; }
+          body .nav ul li ul.dropdown-menu a {
+            background: #fff;
+            color: #141414;
+            width: 100%; }
+            body .nav ul li ul.dropdown-menu a:hover {
+              background: #3c763d;
+              color: #fff; }
+  body .hot-tours {
+    background: rgba(203, 58, 0, 0.7);
+    min-height: 150px; }
+  body .footer {
+    background: #141414;
+    color: #fff; }
 
-a {
-  color: #00B7FF; }
+@media (min-width: 0px) and (max-width: 1170px) {
+  section, header, footer, .container {
+    width: 1170px !important; } }
 
 /*# sourceMappingURL=style.css.map */
