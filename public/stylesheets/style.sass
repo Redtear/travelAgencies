@@ -1,8 +1,10 @@
 $maxWidth: 1170px
 $baseFontSize: 16px
-$baseFontFamily: 'Open Sans'
+$baseFontFamily: 'Open Sans', sans-serif
 $baseLineHeight: 1.3
 $baseTextColor: #141414
+$baseGreenColor: #4cae4c
+$secondGreenColor: #3c763d
 
 body
   font-size: $baseFontSize
@@ -54,19 +56,19 @@ body
       -webkit-border-radius: 3px
       -moz-border-radius: 3px
       border-radius: 3px
-      background: #4cae4c
+      background: $baseGreenColor
       color: #fff
       font-weight: 700
       padding: 5px 10px
       &:hover
-        background: #3c763d
+        background: $secondGreenColor
   .about
     min-height: 100px
     .logo
       font-size: 60px
       margin: 0 30px
   .nav
-    background: #4cae4c
+    background: $baseGreenColor
     padding: 0 20px
     ul
       list-style: none
@@ -76,7 +78,7 @@ body
         display: inline-block
         .open > a:hover, 
         .open > a:focus
-          background: #3c763d
+          background: $secondGreenColor
         a
           text-decoration: none
           padding: 10px 20px
@@ -86,9 +88,9 @@ body
           text-transform: uppercase
           &:hover,
           &:focus
-            background: #3c763d
+            background: $secondGreenColor
         .active
-          background: #3c763d
+          background: $secondGreenColor
         ul.dropdown-menu
           padding: 0
           li
@@ -98,7 +100,7 @@ body
             color: $baseTextColor
             width: 100%
             &:hover
-              background: #3c763d
+              background: $secondGreenColor
               color: #fff
   .hot-tours
     background: rgba(203, 58, 0, 0.7)
