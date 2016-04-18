@@ -11,13 +11,16 @@ body
   font-family: $baseFontFamily
   line-height: $baseLineHeight
   color: $baseTextColor
-  background: #F5F5F5
-  padding-top: 35px
+  background-attachment: fixed
+  background-size: cover
+  -webkit-transition: background 0.7s ease-in-out
+  -moz-transition: background 0.7s ease-in-out
+  -o-transition: background 0.7s ease-in-out
+  transition: background 0.7s ease-in-out
 
   .container
     max-width: $maxWidth !important
     position: relative
-    margin: 0 auto
 
   a,
   input,
@@ -36,22 +39,76 @@ body
   .t-left
     text-align: left
 
+  h2
+    margin: 0
 
-  section
-    margin-bottom: 15px
-    background: #fff
-    -webkit-border-radius: 3px
-    -moz-border-radius: 3px
-    border-radius: 3px
-    min-height: 50px
-    box-shadow: 0 0 5px 0 #747474
+  .countrie,
+  .tour,
+  .page
+    padding: 20px 0
+    background: rgba(245, 245, 245, 0.9)
+
+  .news,
+  .tours,
+  .countries
+    color: #fff
+    margin-bottom: 40px
+    h2
+      padding: 10px 10px
+      background: $baseGreenColor
+      border-top-right-radius: 3px
+      border-top-left-radius: 3px
+      box-shadow: 0 0 5px 0 #747474
+      text-transform: uppercase
+      font-size: 22px
+    .cont
+      padding: 20px 20px 0 20px
+      background: rgb(245, 245, 245)
+      border: 1px solid #e6e6e6
+      border-top: none
+      min-height: 200px
+      .row
+        margin: 0 auto
+        margin-bottom: 20px
+        width: 100%
+        > div
+          padding: 0 10px
+      .item
+        width: 100%
+        display: block
+        height: 200px
+        position: relative
+        background-size: cover
+        .shadow
+          position: absolute
+          width: 100%
+          top: 0
+          bottom: 0
+          background: rgba(0, 0, 0, 0.2)
+          transition: opacity 0.2s ease-in-out
+        .title
+          position: absolute
+          bottom: 0
+          width: 100%
+          min-height: 30px
+          background: rgba(0, 0, 0, 0.4)
+          color: #fff
+          padding: 10px 20px
+          transition: background 0.2s ease-in-out
+        &:hover
+          .shadow
+            //display: none
+            opacity: 0
+          .title
+            background: rgba(0, 0, 0, 0.7)
 
   .stat
-    background: $baseTextColor
-    padding: 5px 10px
+    background: #262626
+    padding: 10px 0
     .num
       color: #fff
       margin-top: 5px
+      font-weight: 700
     .btn
       -webkit-border-radius: 3px
       -moz-border-radius: 3px
@@ -62,14 +119,34 @@ body
       padding: 5px 10px
       &:hover
         background: $secondGreenColor
+    .search
+      display: inline-block
+      margin-right: 10px
+      input
+        border: none
+        padding: 5px 10px
+        vertical-align: middle
+        border: 1px solid $baseGreenColor
+        border-bottom-left-radius: 3px
+        border-top-left-radius: 3px
+      .btn
+        border-bottom-left-radius: 0
+        border-top-left-radius: 0
   .about
-    min-height: 100px
+    padding: 15px 0
+    background: rgba(81, 197, 81, 0.91)
+    color: #fff
     .logo
       font-size: 60px
       margin: 0 30px
+      text-transform: uppercase
+      text-decoration: none
   .nav
     background: $baseGreenColor
-    padding: 0 20px
+    box-shadow: 0 2px 5px 0 #747474
+    top: 0
+    z-index: 1000
+    width: 100%
     ul
       list-style: none
       padding-left: 0
@@ -102,14 +179,80 @@ body
             &:hover
               background: $secondGreenColor
               color: #fff
+    .add-btns
+      display: none
+      .btn
+        border-radius: 3px
+        background: #262626
+        color: #fff
+        font-weight: 700
+        padding: 5px 10px
+        border: 1px solid #262626
+        &:hover
+          background: #fff
+          color: #262626
+      .search
+        display: inline-block
+        margin-right: 10px
+        margin-top: 3px
+        input
+          border: none
+          padding: 5px 10px
+          vertical-align: middle
+          border: 1px solid #262626
+          border-bottom-left-radius: 3px
+          border-top-left-radius: 3px
+        .btn
+          border-bottom-left-radius: 0
+          border-top-left-radius: 0
+          border-left: none
   .hot-tours
-    background: rgba(203, 58, 0, 0.7)
-    min-height: 150px
+    padding: 40px 0
+    color: #fff
+    .cont
+      background: rgba(228, 111, 89, 0.91)
+      min-height: 150px
+      box-shadow: 0 0 5px 0 #747474
+      padding: 10px
 
-    
   .footer
     background: $baseTextColor
     color: #fff
+    .social
+      padding: 10px 0
+      background: #262626
+      text-align: center
+      a
+        margin: 0 20px
+        font-size: 25px
+        color: #fff
+        text-decoration: none
+        font-weight: 700
+        display: inline-block
+        &:hover
+          color: #3489ff
+    .other
+      background: #444444
+      padding: 20px 0
+      .caption
+        text-transform: uppercase
+      .list
+        padding-left: 0
+        list-style: none
+        a
+          font-size: 15px
+          text-decoration: none
+          color: #c0c0c0
+          &:hover
+            color: #fff
+    .copy
+      background: #343434
+      padding: 10px 0
+      p
+        margin: 0
+        text-align: center
+        color: #c0c0c0
+        font-size: 14px
 
 @media (min-width: 0px) and (max-width: $maxWidth)
   section, header, footer, .container
