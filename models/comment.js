@@ -1,18 +1,18 @@
 "use strict";
 
 module.exports = function(sequelize, DataTypes) {
-    var Comment = sequelize.define('Comment', {
+    var Comment = sequelize.define('comments', {
         text: DataTypes.TEXT
     }, {
         classMethods: {
             associate: function (models) {
-                Comment.belongsTo(models.New, {
+                this.belongsTo(models.news, {
                     onDelete: "CASCADE",
                     foreignKey: {
                         allowNull: false
                     }
                 });
-                Comment.belongsTo(models.User, {
+                this.belongsTo(models.users, {
                     onDelete: "CASCADE",
                     foreignKey: {
                         allowNull: false
@@ -22,6 +22,6 @@ module.exports = function(sequelize, DataTypes) {
         }
     });
 
-    Comment.sync();
+    //Comment.sync();
     return Comment;
 };

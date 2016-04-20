@@ -1,18 +1,18 @@
 "use strict";
 
 module.exports = function(sequelize, DataTypes) {
-    var Reservation = sequelize.define('Reservation', {
+    var Reservation = sequelize.define('reservations', {
         // default fields
     }, {
         classMethods: {
             associate: function (models) {
-                Reservation.belongsTo(models.Tour, {
+                this.belongsTo(models.tours, {
                     onDelete: "CASCADE",
                     foreignKey: {
                         allowNull: false
                     }
                 });
-                Reservation.belongsTo(models.User, {
+                this.belongsTo(models.users, {
                     onDelete: "CASCADE",
                     foreignKey: {
                         allowNull: false
@@ -22,6 +22,6 @@ module.exports = function(sequelize, DataTypes) {
         }
     });
 
-    Reservation.sync();
+    //Reservation.sync();
     return Reservation;
 };

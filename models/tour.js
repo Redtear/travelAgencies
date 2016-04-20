@@ -1,7 +1,7 @@
 "use strict";
 
 module.exports = function(sequelize, DataTypes) {
-    var Tour = sequelize.define('Tour', {
+    var Tour = sequelize.define('tours', {
         name: DataTypes.STRING,
         countrie: DataTypes.STRING,
         description: DataTypes.STRING,
@@ -14,11 +14,11 @@ module.exports = function(sequelize, DataTypes) {
     }, {
         classMethods: {
             associate: function(models) {
-                Tour.hasMany(models.Reservation);
+                this.hasMany(models.reservations);
             }
         }
     });
 
-    Tour.sync();
+    //Tour.sync();
     return Tour;
 };

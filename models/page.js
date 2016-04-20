@@ -1,13 +1,13 @@
 "use strict";
 
 module.exports = function(sequelize, DataTypes) {
-    var Page = sequelize.define('Page', {
+    var Page = sequelize.define('pages', {
         title: DataTypes.STRING,
         text: DataTypes.TEXT
     }, {
         classMethods: {
             associate: function (models) {
-                Page.belongsTo(models.Section, {
+                this.belongsTo(models.sections, {
                     onDelete: "CASCADE",
                     foreignKey: {
                         allowNull: false
@@ -17,6 +17,6 @@ module.exports = function(sequelize, DataTypes) {
         }
     });
 
-    Page.sync();
+    //Page.sync();
     return Page;
 };

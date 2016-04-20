@@ -1,18 +1,18 @@
 "use strict";
 
 module.exports = function(sequelize, DataTypes) {
-    var New = sequelize.define('New', {
+    var New = sequelize.define('news', {
         title: DataTypes.STRING,
         text: DataTypes.TEXT,
         image: DataTypes.STRING
     }, {
         classMethods: {
             associate: function(models) {
-                New.hasMany(models.Comment);
+                this.hasMany(models.comments);
             }
         }
     });
 
-    New.sync();
+    //New.sync();
     return New;
 };
