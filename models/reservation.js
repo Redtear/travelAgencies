@@ -21,7 +21,6 @@ module.exports = function(sequelize, DataTypes) {
             }
         }
     });
-
-    //Reservation.sync();
+    
     return Reservation;
 };

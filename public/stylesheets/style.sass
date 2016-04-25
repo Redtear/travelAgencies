@@ -17,6 +17,8 @@ body
   -moz-transition: background 0.7s ease-in-out
   -o-transition: background 0.7s ease-in-out
   transition: background 0.7s ease-in-out
+  min-height: 100vh
+  position: relative
 
   .container
     max-width: $maxWidth !important
@@ -52,7 +54,6 @@ body
   .tours,
   .countries
     color: #fff
-    margin-bottom: 40px
     h2
       padding: 10px 10px
       background: $baseGreenColor
@@ -147,6 +148,8 @@ body
     top: 0
     z-index: 1000
     width: 100%
+    .fa
+      margin-left: 3px
     ul
       list-style: none
       padding-left: 0
@@ -218,6 +221,9 @@ body
   .footer
     background: $baseTextColor
     color: #fff
+    bottom: 0
+    width: 100%
+    margin-top: 40px
     .social
       padding: 10px 0
       background: #262626

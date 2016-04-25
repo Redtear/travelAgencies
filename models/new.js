@@ -2,8 +2,14 @@
 
 module.exports = function(sequelize, DataTypes) {
     var New = sequelize.define('news', {
-        title: DataTypes.STRING,
-        text: DataTypes.TEXT,
+        title: {
+            type: DataTypes.STRING,
+            allowNull: false
+        },
+        text: {
+            type: DataTypes.TEXT,
+            allowNull: false
+        },
         image: DataTypes.STRING
     }, {
         classMethods: {
@@ -13,6 +19,5 @@ module.exports = function(sequelize, DataTypes) {
         }
     });
 
-    //New.sync();
     return New;
 };

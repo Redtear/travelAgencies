@@ -2,8 +2,23 @@
 
 module.exports = function(sequelize, DataTypes) {
     var Page = sequelize.define('pages', {
-        title: DataTypes.STRING,
-        text: DataTypes.TEXT
+        title: {
+            type: DataTypes.STRING,
+            unique: true,
+            allowNull: false
+        },
+        text: {
+            type: DataTypes.TEXT,
+            allowNull: false
+        },
+        link: {
+            type: DataTypes.STRING,
+            unique: true,
+            allowNull: false,
+            validate: {
+                is: ["^[a-z-]+$",'i']
+            }
+        }
     }, {
         classMethods: {
             associate: function (models) {
@@ -16,7 +31,6 @@ module.exports = function(sequelize, DataTypes) {
             }
         }
     });
-
-    //Page.sync();
+    
     return Page;
 };

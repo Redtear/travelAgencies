@@ -2,7 +2,10 @@
 
 module.exports = function(sequelize, DataTypes) {
     var Comment = sequelize.define('comments', {
-        text: DataTypes.TEXT
+        text: {
+            type: DataTypes.TEXT,
+            allowNull: false
+        }
     }, {
         classMethods: {
             associate: function (models) {
@@ -21,7 +24,6 @@ module.exports = function(sequelize, DataTypes) {
             }
         }
     });
-
-    //Comment.sync();
+    
     return Comment;
 };

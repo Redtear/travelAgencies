@@ -2,8 +2,16 @@
 
 module.exports = function(sequelize, DataTypes) {
     var Section = sequelize.define('sections', {
-        name: DataTypes.STRING,
-        link: DataTypes.STRING
+        name: {
+            type: DataTypes.STRING,
+            unique: true,
+            allowNull: false
+        },
+        link: {
+            type: DataTypes.STRING,
+            unique: true,
+            allowNull: false
+        }
     }, {
         classMethods: {
             associate: function(models) {
@@ -11,7 +19,6 @@ module.exports = function(sequelize, DataTypes) {
             }
         }
     });
-
-    //Section.sync();
+    
     return Section;
 };
