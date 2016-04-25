@@ -3,6 +3,13 @@
   "database" : {
     "name": "travelAgencies",
     "username": "root",
-    "password": "bogser"
+    "password": "",
+    "addSetting": {
+      "host": "localhost",
+      "dialect": "mysql"
+    }
+  },
+  "session": {
+    "secret": "xbiss"
   }
 }

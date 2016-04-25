@@ -17,71 +17,67 @@ html
     script(src='/javascripts/script.js')
 
   body.bg-slide(data-folder='/images/bg/', data-images='bg1.jpg|bg2.jpg')
-    section.header
-      .stat
+    .wrapper
+      section.header
+        .stat
+          .container
+            .row
+              .col-sm-6
+                .num number
+              .col-sm-6
+                .t-right
+                  .search
+                    input(type='text', name='search', placeholder='search text..')
+                    button.btn <i class="fa fa-search" aria-hidden="true"></i>
+                  button.btn(type='button', data-trigger="focus",  title, data-placement="bottom", data-toggle="popover" data-content="form auth") Sign
+        .about
+          .container
+            .row
+              .col-sm-4
+                a.logo(href='/') logo
+              .col-sm-8
+                .row
+                  .col-sm-6
+                    .contacts contacts
+                  .col-sm-6
+                    .contacts contacts
+      section.nav
         .container
           .row
-            .col-sm-6
-              .num number
-            .col-sm-6
-              .t-right
-                .search
-                  input(type='text', name='search', placeholder='search text..')
-                  button.btn <i class="fa fa-search" aria-hidden="true"></i>
-                button.btn(type='button', data-trigger="focus",  title, data-placement="bottom", data-toggle="popover" data-content="form auth") Sign
-      .about
-        .container
-          .row
-            .col-sm-4
-              a.logo(href='/') logo
             .col-sm-8
-              .row
-                .col-sm-6
-                  .contacts contacts
-                .col-sm-6
-                  .contacts contacts
-    section.nav
-      .container
-        .row
-          .col-sm-8
-            ul
-              li
-                a(href='/') home
-              li
-                a(href='/tours') tours
-              li
-                .dropdown
-                  a#dLabel2(href='', data-toggle="dropdown" aria-haspopup="true" aria-expanded="false", data-target="#", role='button') Pages 1 <i class="fa fa-caret-down" aria-hidden="true"></i>
-                  ul.dropdown-menu(aria-labelledby="dLabel2")
+              ul
+                li
+                  a(href='/') home
+                li
+                  a(href='/tours') tours
+                if(results != undefined && results.sections != undefined)
+                  each sect in results.sections
                     li
-                      a(href='/pages/page-1') page 1
-                    li
-                      a(href='/pages/page-2') page 2
-              li
-                .dropdown
-                  a#dLabel3(href='', data-toggle="dropdown" aria-haspopup="true" aria-expanded="false", data-target="#", role='button') Pages 2 <i class="fa fa-caret-down" aria-hidden="true"></i>
-                  ul.dropdown-menu(aria-labelledby="dLabel3")
-                    li
-                      a(href='/pages/page-3') page 3
-                    li
-                      a(href='/pages/page-4') page 4
-                    li
-                      a(href='/pages/page-5') page 5
-              li
-                a(href='/countries') Countries
-          .col-sm-4
-            .add-btns
-              .t-right
-                .search
-                  input(type='text', name='search', placeholder='search text..')
-                  button.btn <i class="fa fa-search" aria-hidden="true"></i>
-                button.btn(type='button', data-trigger="focus",  title, data-placement="bottom", data-toggle="popover" data-content="form auth") Sign
-    section.hot-tours
-      .container
-        .cont
-          h2 hot tours
+                      .dropdown
+                        a#dLabel3(href='', data-toggle="dropdown" aria-haspopup="true" aria-expanded="false", data-target="#", role='button')
+                          = sect.name
+                          i.fa.fa-caret-down(aria-hidden="true")
+                        ul.dropdown-menu(aria-labelledby="dLabel3")
+                          each page in sect.pages
+                            li
+                              a(href='/pages/' + page.link)
+                                = page.title
+                li
+                  a(href='/countries') Countries
 
-    block content
+            .col-sm-4
+              .add-btns
+                .t-right
+                  .search
+                    input(type='text', name='search', placeholder='search text..')
+                    button.btn <i class="fa fa-search" aria-hidden="true"></i>
+                  button.btn(type='button', data-trigger="focus",  title, data-placement="bottom", data-toggle="popover" data-content="form auth") Sign
+      section.hot-tours
+        .container
+          .cont
+            h2 hot tours
+
+      block content
 
     section.footer
       .social

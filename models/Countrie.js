@@ -1,12 +1,18 @@
 "use strict";
 
 module.exports = function(sequelize, DataTypes) {
-    var Countrie = sequelize.define('Countrie', {
-        name: DataTypes.STRING,
-        description: DataTypes.TEXT,
+    var Countrie = sequelize.define('countries', {
+        name: {
+            type: DataTypes.STRING,
+            unique: true,
+            allowNull: false
+        },
+        description: {
+            type: DataTypes.TEXT,
+            allowNull: false
+        },
         image: DataTypes.STRING
     });
-
-    Countrie.sync();
+    
     return Countrie;
 };
